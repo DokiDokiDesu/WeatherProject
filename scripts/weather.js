@@ -20,7 +20,7 @@ function updateWeather() {
     return;
   }
 
- const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric&lang=tr`;
+ const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric&lang=en`;
 
   fetch(url)
     .then(response => {
@@ -33,7 +33,7 @@ function updateWeather() {
       const description = data.weather[0].description;
       const icon = data.weather[0].icon;
 
-      document.querySelector('.weather-celc').innerHTML = `<p><strong>${temp} °C</strong></p>`;
+      document.querySelector('.weather-celc').innerHTML = `<p><strong>${temp.toFixed()} °C</strong></p>`;
       document.querySelector('.weather-info').innerHTML = description;
       document.querySelector('.location').innerHTML = name;   
       document.querySelector('.weather-pic').innerHTML = `<img src="https://openweathermap.org/img/wn/${icon}@2x.png">`;
