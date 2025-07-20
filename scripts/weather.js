@@ -35,7 +35,7 @@ function updateWeather() {
 
       document.querySelector('.weather-celc').innerHTML = `<p><strong>${temp.toFixed()} °C</strong></p>`;
       document.querySelector('.weather-info').innerHTML = description;
-      document.querySelector('.location').innerHTML = name;   
+      document.querySelector('.location').innerHTML = `<span style="font-family: 'Font Awesome 6 Free'; font-weight: 900;">&#xf3c5;</span> ${name}`;
       document.querySelector('.weather-pic').innerHTML = `<img src="https://openweathermap.org/img/wn/${icon}@2x.png">`;
     })
     
